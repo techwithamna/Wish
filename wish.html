@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mahnoor ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(180deg,#0b0b0f,#1a0f0a);
+  color:#eaeaea;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* sections spacing */
+section{
+  min-height:auto;
+  padding:50px 10%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.intro h1{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  color:#f5c16c;
+  margin-bottom:10px;
+}
+.intro p{opacity:.85;}
+.divider{
+  height:2px;
+  width:120px;
+  background:linear-gradient(90deg,#f5c16c,transparent);
+  margin:20px 0;
+}
+
+/* chocolate particles */
+.choco span{
+  position:fixed;
+  top:-10px;
+  width:8px;
+  height:8px;
+  background:#6b3e26;
+  border-radius:50%;
+  animation:fall 12s linear infinite;
+  opacity:.6;
+}
+@keyframes fall{to{transform:translateY(120vh);}}
+
+/* lock & cards */
+.lock{
+  max-width:400px;
+  background:rgba(255,255,255,.05);
+  padding:30px;
+  border-radius:18px;
+  backdrop-filter:blur(14px);
+  margin:30px auto;
+}
+.lock input{
+  width:100%;
+  padding:12px;
+  background:#0f0f14;
+  border:1px solid #444;
+  color:#fff;
+  margin-top:15px;
+  border-radius:8px;
+}
+.lock button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  background:#f5c16c;
+  color:#000;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.grid{
+  display:none;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:30px;
+}
+.card{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);
+  border-radius:22px;
+  padding:20px;
+  transition:.5s;
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
+.icon{
+  font-size:2.2rem;
+  margin-bottom:12px;
+  color:#f5c16c;
+}
+.sun{color:#ffd36a;animation:glow 2s infinite alternate;}
+@keyframes glow{from{text-shadow:0 0 10px #ffd36a}to{text-shadow:0 0 25px #ffd36a}}
+.paw{animation:bounce 1.6s infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+.final p{opacity:.85;}
+
+/* floating background icons */
+.bg-icons i{
+  position:fixed;
+  top:-50px;
+  font-size:2rem;
+  opacity:0.8;
+  pointer-events:none;
+  animation:float 15s linear infinite;
+}
+@keyframes float{
+  0% { transform:translateY(0) rotate(0deg);}
+  100% { transform:translateY(120vh) rotate(360deg);}
+}
+.gift{color:#ff4d6d;}
+.cake{color:#ffdd55;}
+.balloon{color:#66ccff;}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgm" >
+  <source src="Happy Birthday To You Ji - Funny Hindi Birthday Song (Part 1) - Funzoa Mimi Teddy, Krsna Solo.mp3" type="audio/mpeg">
+ 
+</audio>
+
+<!-- Floating Gifts, Cake, Balloons -->
+<div class="bg-icons">
+  <i class="fa-solid fa-gift gift" style="left:10%; animation-delay:0s;"></i>
+  <i class="fa-solid fa-gift gift" style="left:70%; animation-delay:3s;"></i>
+  <i class="fa-solid fa-birthday-cake cake" style="left:40%; animation-delay:1s;"></i>
+  <i class="fa-solid fa-birthday-cake cake" style="left:80%; animation-delay:4s;"></i>
+  <i class="fa-solid fa-balloon balloon" style="left:20%; animation-delay:2s;"></i>
+  <i class="fa-solid fa-balloon balloon" style="left:60%; animation-delay:5s;"></i>
+</div>
+
+<!-- Chocolate particles -->
+<div class="choco">
+  <span style="left:10%"></span>
+  <span style="left:30%"></span>
+  <span style="left:50%"></span>
+  <span style="left:70%"></span>
+  <span style="left:90%"></span>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <h1>Mahnoor (Lilu ka birthday)</h1>
+  <div class="divider"></div>
+  <p>This isn’t just a birthday wish. It’s a small universe built with things you love.</p>
+</section>
+
+<!-- CHOCOLATE -->
+<section>
+  <h2><i class="fa-solid fa-candy-cane icon"></i> Chocolate Level Sweet</h2>
+  <div class="divider"></div>
+  <p>
+You love chocolates — maybe because they’re comforting, rich,  
+and somehow make everything feel a little better.<br><br>
+Funny thing is, you’re kind of the same.
+  </p>
+</section>
+
+<!-- LOCK & CARDS -->
+<section>
+  <div class="lock">
+    <h3><i class="fa-solid fa-lock"></i> Enter Password</h3>
+    <p>Only for Mahnoor 🤍</p>
+    <input type="password" id="pass" placeholder="Enter password">
+    <button onclick="unlock()">Unlock</button>
+  </div>
+
+  <div class="grid" id="cards">
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-heart"></i></div>
+      We talk , We Vibe together!!! mai chahti tm hmesha khush rho hnsti rho series dekho mery sath , jesy mjhy itna kuch sikhati mai tu ab tm pr depend huny lgi hunn
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-star"></i></div>
+      Bas hum hamesha eik sath rhein , jitna log hmein 1 sath nahi dekhna chahty hm utna 1 sath hun meri jaan
+    </div>
+
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-face-smile"></i></div>
+      Hmari sb se achi memory Discrete k paper wali h jis trhn hm ne 1 dusry ka sath dia aur yhn tk hm apni dosti le aye Allah kry nzr lgany walo ki nzr na lgy hehe
+    </div>
+  </div>
+</section>
+
+<!-- SUNNY -->
+<section>
+  <h2 class="sun"><i class="fa-solid fa-sun"></i> Mian Sunny</h2>
+  <div class="divider"></div>
+  <p>
+Kheir mera dil nahi kr rha tha lekin birthday wish agr deti chlun tu usme yh include krna zrri h k tmhy mian sunny zindai me 1 baar zaroor mily
+  </p>
+</section>
+
+<!-- DUFFY -->
+<section>
+  <h2><i class="fa-solid fa-paw"></i> Duffy</h2>
+  <div class="divider"></div>
+  <p class="paw">
+Haye aur jo duffy h na m ne usko abhi dekha nahi lekin mjhy wo tm se zyada pyara tbh 
+mera bht dil krta usko pkrny kaa  
+  </p>
+</section>
+
+<section class="final">
+<h2>Happy Birthday 🎂</h2>
+<p>
+Happy Birthday, Mahnoor. I hope this year brings you moments that feel warm even when no one is watching. May you always find joy in small things, strength in quiet moments, and love in the places you least expect. Stay soft. Stay strong. Stay exactly who you are. The world genuinely feels better with you in it.
+</p>
+</section>
+
+<script>
+function unlock(){
+  const pass = document.getElementById("pass").value;
+  if(pass==="mahaduffy"){
+    document.getElementById("cards").style.display="grid";
+    document.querySelector(".lock").style.display="none";
+  } else {
+    alert("Wrong password 😏");
+  }
+}
+</script>
+
+</body>
+</html>
